@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	
+   <appender name="JMSAppender" class="br.com.jmslogappender.models.JmsAppender">     
+     	 <param name="application" value="teste"/>
+     	 <param name="urlProvider" value="tcp://localhost:61616"/>
+     	 <param name="destinyQueue" value="fila.log"/>
+     	 <param name="user" value=""/>
+     	 <param name="password" value=""/>
+     	 <param name="monitorLevels" value="INFO,ERROR"/>
+     	 <param name="logFormat" value="json"/>
+   </appender>
+
+	<!-- Root Logger -->
+	<root>
+		<priority value="info" />
+		 <appender-ref ref="JMSAppender" />
+	</root>
+	
+</log4j:configuration>
