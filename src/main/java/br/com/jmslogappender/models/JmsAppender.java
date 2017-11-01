@@ -14,9 +14,7 @@ public class JmsAppender extends AppenderSkeleton{
 	private String logFormat;	
 	private Messenger messenger;
 	
-	public JmsAppender() {
-		System.out.println("Instanciou a classe JMSAppender");
-	}
+	public JmsAppender() {}
 			
 	public String getApplication() {
 		return application;
@@ -87,7 +85,6 @@ public class JmsAppender extends AppenderSkeleton{
 		if(this.messenger == null){
 			this.messenger = new Messenger(this);
 		}
-		this.messenger.send(event);
-		this.messenger.send(event);
+		this.messenger.send(event);	
 	}	 
 }

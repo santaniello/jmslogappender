@@ -7,7 +7,7 @@ import javax.xml.bind.JAXB;
 public class GenerateXmlLog implements GenerateFormatedLog{
 	
 	@Override
-	public String generate(LogJms log) {
+	public String generate(Log log) {
 		StringWriter writer = new StringWriter();
 		JAXB.marshal(log, writer);
 		return writer.toString();

@@ -20,7 +20,7 @@ import br.com.jmslogappender.serializers.XmlLocalDateTimeSerializer;
 @JsonRootName(value="log")
 @XmlRootElement(name = "log")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class LogJms {
+public class Log {
 	private String application;	
 	private String level;
 	private String message;
@@ -28,9 +28,9 @@ public class LogJms {
 	@XmlJavaTypeAdapter(value = XmlLocalDateTimeSerializer.class)
 	private LocalDateTime dateHour;
 		
-	public LogJms() {}
+	public Log() {}
 	
-	public LogJms(String application, LoggingEvent event) {
+	public Log(String application, LoggingEvent event) {
 		this.application = application;
 		this.level = event.getLevel().toString();
 		this.message = event.getMessage().toString();

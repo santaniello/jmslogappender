@@ -1,4 +1,7 @@
-package br.com.jmslogappender.models;
+package br.com.jmslogappender.loglayouts;
+
+import br.com.jmslogappender.models.Log;
+import br.com.jmslogappender.models.TypeFile;
 
 public class LogJmsLayout {
 	
@@ -9,9 +12,9 @@ public class LogJmsLayout {
 		this.typeLog = typeLog;
 	}
 	
-	public String format(LogJms log) {
+	public String format(Log log) {
 		String logFile = null;
-		for(TypeLog type : TypeLog.values()){
+		for(TypeFile type : TypeFile.values()){
             if(type.getType().equals(typeLog.toUpperCase())){
             	logFile = type.getRegra().generate(log);            	
             }
