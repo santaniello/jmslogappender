@@ -6,11 +6,12 @@
 	<artifactId>jmslogappender</artifactId>
 	<name>jmslogappender</name>
 	<packaging>jar</packaging>
-	<version>20171101.01</version>
+	<version>20171113.03</version>
 	<properties>
 		<!-- Versões de dependências... -->
 		<java-version>1.8</java-version>
 		<org.slf4j-version>1.7.7</org.slf4j-version>
+		<org.log4j-version>2.7</org.log4j-version>
 		<org.aspectj-version>1.8.12</org.aspectj-version>
 		<!-- Outras properties ... -->
 		<failOnMissingWebXml>false</failOnMissingWebXml>
@@ -42,7 +43,7 @@
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.7</version>
+			<version>${org.log4j-version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>javax.mail</groupId>
@@ -62,6 +63,23 @@
 				</exclusion>
 			</exclusions>
 			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>${org.log4j-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-web</artifactId>
+			<version>${org.log4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.21</version>
+			<scope>test</scope>
 		</dependency>
 		<!-- ****************** Integração ***************************** -->
 		<dependency>
