@@ -86,5 +86,6 @@ public class JmsAppender extends AppenderSkeleton{
 			this.messenger = new Messenger(this);
 		}
 		this.messenger.send(event);	
+
 	}	 
 }
